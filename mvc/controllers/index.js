@@ -23,9 +23,18 @@ const get404 = function(req, res) {
 const redirect404 = function(req, res) {
     res.redirect('/404')
 }
+
+const getAbout = function(req, res) {
+    res.render('about', { title: 'About Me' })
+}
+const getContact = function(req, res) {
+    res.render('contact', { title: 'Contact Me' })
+}
 module.exports = {
     getHomePage,
     getBlogPost,
+    getAbout,
+    getContact,
     get404,
     redirect404
 
