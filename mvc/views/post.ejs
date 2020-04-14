@@ -26,35 +26,36 @@
 		              </div>
 		            </div>
 		            <div class="pt-5 mt-5">
-		              <h3 class="mb-5 font-weight-bold"><%= post.numOfComments %></h3>
+		              <h3 class="mb-5 font-weight-bold"><%= post.numOfComments %> Comments</h3>
 
 					  <ul class="comment-list">
 					  	<% function printComments(commentsArray,isChild){ %>
-								<% if(isChild){%>
-								<ul class="children">
-								<% } %>
+								<% if(isChild) { %><ul class="children"> <% } %>
 
-								<% for(let i=0;i<commentsArray.length; i++){ %>
-
+								<% for(let i=0;i < commentsArray.length; i++){ %>
 									<li class="comment">
 										<div class="vcard bio">
-										<img src="<%= commentsArray[i].userImg %>" alt="">
+											<img src="<%= commentsArray[i].userImg %>" alt="A users image">
 										</div>
 
 										<div class="comment-body">
 											<h3><%= commentsArray[i].user %></h3>
+											<div class="meta"><%= commentsArray[i].date %></div>
+											<p ><%= commentsArray[i].body %></p>
+											<p><a href="#" class="reply">Reply</a></p>
 										</div>
+										<%
+											if(commentsArray[i].comments.length>0){ 
+												printComments(commentsArray[i].comments,true);
+											} 
+										%>
 									</li>
-
 								<% } %>
-
-								<% if(isChild){%>
-								<ul class="children">
-								<% } %>
-						  <% }%>
+								<% if(isChild){%></ul><% } %>
+						  <% } %>
+						  
+						  <% printComments(post.comments,false); %>
 					  </ul>
-		              
-		              <!-- END comment-list -->
 		              <div class="comment-form-wrap pt-5">
 		                <h3 class="mb-5">Leave a comment</h3>
 		                <form action="#" class="p-3 p-md-4 bg-light">
@@ -70,7 +71,7 @@
 		                    <label for="website">Website</label>
 		                    <input type="url" class="form-control" id="website">
 		                  </div>
-
+						  
 		                  <div class="form-group">
 		                    <label for="message">Message</label>
 		                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
