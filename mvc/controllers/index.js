@@ -12,6 +12,7 @@ const getHomePage = function(req, res) {
 
 const getBlogPost = function({ params }, res) {
     let post = postData.find((val) => val.id == params.postid)
+    if (!post) { res.redirect('/404') }
     res.render('post.ejs', { title: post.title, post: post })
 }
 
