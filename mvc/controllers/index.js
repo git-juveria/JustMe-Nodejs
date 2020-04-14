@@ -15,8 +15,17 @@ const getBlogPost = function({ params }, res) {
     res.render('post.ejs', { title: post.title, post: post })
 }
 
+const get404 = function(req, res) {
+    res.render('404.ejs', { title: '404- Page Not Found' })
+}
+
+const redirect404 = function(req, res) {
+    res.redirect('/404')
+}
 module.exports = {
     getHomePage,
-    getBlogPost
+    getBlogPost,
+    get404,
+    redirect404
 
 }
