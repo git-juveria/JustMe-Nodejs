@@ -7,7 +7,7 @@ const getHomePage = function(req, res) {
         title: "Just Me",
         posts: postData
     }
-    res.render('index.ejs', { title: "Just Me", posts: postData })
+    res.render('index.ejs', { title: "Just Me", posts: postData, active: "index" })
 }
 
 const getBlogPost = function({ params }, res) {
@@ -25,10 +25,10 @@ const redirect404 = function(req, res) {
 }
 
 const getAbout = function(req, res) {
-    res.render('about', { title: 'About Me' })
+    res.render('about', { title: 'About Me', active: "about" })
 }
 const getContact = function(req, res) {
-    res.render('contact', { title: 'Contact Me' })
+    res.render('contact', { title: 'Contact Me', active: "contact" })
 }
 module.exports = {
     getHomePage,
