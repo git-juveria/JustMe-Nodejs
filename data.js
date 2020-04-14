@@ -1,3 +1,48 @@
+let defaultImage = "/images/avatar.jpg";
+let person1 = {
+    name: "Blake Copeland",
+    img: "/images/person_1.jpg"
+}
+let person2 = {
+    name: "Coby Oliver",
+    img: "/images/person_2.jpg"
+}
+let person3 = {
+    name: "Julien Taylor",
+    img: "/images/person_3.jpg"
+}
+let person4 = {
+    name: "Lachlan Ritter",
+    img: "/images/person_4.jpg"
+}
+let person5 = {
+    name: "Braden Hoover",
+    img: "/images/person_5.jpg"
+}
+let person6 = {
+    name: "Cherise Stanton",
+    img: "/images/person_6.jpg"
+}
+let person7 = {
+    name: "Annette Cole",
+    img: "/images/person_7.jpg"
+}
+let person8 = {
+    name: "Natalia Green",
+    img: "/images/person_8.jpg"
+}
+let person9 = {
+    name: "Nancy Hinton",
+    img: "/images/person_9.jpg"
+}
+let person10 = {
+    name: "Vera Brooks",
+    img: "/images/person_10.jpg"
+}
+let author = {
+    name: "Abigail Edwards",
+    img: "/images/author.jpg"
+}
 let postData = [{
     title: "The Problem With The New Fashion",
     preview: "Measurement tailor cut commercial catwalk quality.",
@@ -17,7 +62,55 @@ let postData = [{
     category: "fashion",
     tags: ["love", "trends", "pop culture"],
     image: "image_1.jpg",
-    comments: 3,
+    comments: [{
+        user: person7.name,
+        userImg: person7.img,
+        date: "Sept 14, 2019",
+        body: "Easy independant modification luxurious emphasis modern shape. Imagination allure cut.",
+        comments: []
+    }, {
+        user: person1.name,
+        userImg: person1.img,
+        date: "Sept 13, 2019",
+        body: "Effect influence imagination artificial trade tones consumer tailored taste allure bodice breathable. Clothes one-of-a-kind old-fashioned price elegant sari waistline. Purse independant hair zipper clothing imagination inspiration allure jumper.",
+        comments: [{
+            user: "John Smith",
+            userImg: defaultImage,
+            date: "Sept 13, 2019",
+            body: "Hello, I am a nested comment",
+            comments: [{
+                user: person8.name,
+                userImg: person8.img,
+                date: "Sept 14, 2019",
+                body: "A comment on a nested comment.",
+                comments: []
+            }]
+        }, {
+            user: author.name,
+            userImg: author.img,
+            date: "Sept 14, 2019",
+            body: "Thanks :-)",
+            comments: []
+        }]
+    }, {
+        user: person6.name,
+        userImg: person6.img,
+        date: "Sept 14, 2019",
+        body: "Easy independant modification luxurious emphasis modern shape. Imagination allure cut.",
+        comments: [{
+            user: person2.name,
+            userImg: person2.img,
+            date: "Sept 15, 2019",
+            body: "AHAHAHAH",
+            comments: [{
+                user: author.name,
+                userImg: author.img,
+                date: "Sept 14, 2019",
+                body: "I'm glad you liked it :P",
+                comments: []
+            }]
+        }]
+    }],
     date: "Sept, 13, 2019"
 }, {
     title: "So You've Bought Life ... Now What?",
@@ -35,7 +128,19 @@ let postData = [{
     category: "life",
     tags: ["money", "happiness", "true stories", "relationships"],
     image: "image_2.jpg",
-    comments: 12,
+    comments: [{
+        user: "Brandine Burns",
+        userImg: defaultImage,
+        date: "Sept 20, 2019",
+        body: "Sportswear cheap pumps model radical breathable proportion vogue hair runway. Purchase accessory outfit skirt item. Expirement hippie quality runway trend halter. Shape pret-a-porter urban sleeveless proportion inspiration.",
+        comments: []
+    }, {
+        user: person4.name,
+        userImg: person4.img,
+        date: "Sept 21, 2019",
+        body: "Edge xs extraordinary. Ready-made showcase model manufacture wardrobe popular bows stock synthetic vogue pattern.",
+        comments: []
+    }],
     date: "Sept, 19, 2019"
 }, {
     title: "15 Secretly Funny People",
@@ -55,20 +160,50 @@ let postData = [{
     category: "fun",
     tags: ["relationships", "happiness"],
     image: "image_3.jpg",
-    comments: 7,
+    comments: [{
+        user: person9.name,
+        userImg: person9.img,
+        date: "Sept 29, 2019",
+        body: "Congrats on the new adventure!!",
+        comments: [{
+            user: person5.name,
+            userImg: person5.img,
+            date: "Sept 29, 2019",
+            body: "Fabulous :)",
+            comments: []
+        }, {
+            user: person3.name,
+            userImg: person3.img,
+            date: "Sept 30, 2019",
+            body: "Ensemble trend impeccable. Clothes sewing retailer glossy original ready-made.",
+            comments: []
+        }]
+    }, {
+        user: "Judd White",
+        userImg: defaultImage,
+        date: "Oct 2, 2019",
+        body: "Color jumper purse expensive easy inspiration identity halter. Breathable one-of-a-kind apron synthetic allure effect artistry hanger trade shape...",
+        comments: []
+    }, {
+        user: person10.name,
+        userImg: person10.img,
+        date: "Oct 4, 2019",
+        body: "Incredibly fab atmosphere =)",
+        comments: []
+    }],
     date: "Sept, 21, 2019"
 }, {
     title: "5 Killer Quora Answers",
     preview: "Revealing lingerie comfortable tailor jewelry impeccable.",
     body: [
-        "<p>Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit??, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.</p>",
+        "<p>Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.</p>",
         "<p>Tremor est vivos magna. Expansis ulnis video missing carnem armis caeruleum in locis. A morbo amarus in auras. Nihil horum sagittis tincidunt, gelida portenta. The unleashed virus est, et iam mortui ambulabunt super terram. Souless mortuum oculos attonitos back zombies. An hoc incipere Clairvius Narcisse, an ante? Is bello mundi z?</p>",
         "<p><img src='/images/image_9.jpg' class='img-fluid'></p>",
         "<p>In omni memoria patriae religionis sunt diri undead historiarum. Golums, zombies et fascinati. Maleficia! Vel a modern perhsaps morbi. A terrenti contagium. Forsitan illud Apocalypsi, vel malum poenae horrifying fecimus. Indeflexus monstra per plateas currere. Fit de nostra carne undead. Poenitentiam agite pœnitentiam! Vivens mortua sunt apud nos.</p>",
         "<p>Ut fames cerebro enim carnis, viscera et organa viventium. Sicut spargit virus ad impetum, qui supersumus. Avium, canum, fugere ferae et infecti horrenda monstra. Videmus deformis horrenda daemonum. Panduntur portae inferi. Finis accedens sentio terrore perterritus et taedium. The horror, monstra significant finem. Terror sit unum superesse sentit, ut caro eaters caule nobis.</p>",
         "<h3 class='my-4 w-100 text-center border-top border-bottom'>Zombie Ipsum</h3>",
-        "<p>Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit??, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.</p>",
-        "<p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit??, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.</p>",
+        "<p>Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.</p>",
+        "<p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.</p>",
         "<p>In omni memoria patriae religionis sunt diri undead historiarum. Golums, zombies et fascinati. Maleficia! Vel a modern perhsaps morbi. A terrenti contagium. Forsitan illud Apocalypsi, vel malum poenae horrifying fecimus. Indeflexus monstra per plateas currere. Fit de nostra carne undead. Poenitentiam agite pœnitentiam! Vivens mortua sunt apud nos.</p>",
         "<p>Sicut malus voodoo. Aenean a dolor vulnerum aperire accedunt, mortui iam vivam. Qui tardius moveri, sed in magna copia sint terribiles legionis. Alii missing oculis aliorum sicut serpere crabs nostram. Putridi odores aere implent.</p>",
         "<p>De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.</p>",
@@ -76,7 +211,25 @@ let postData = [{
     category: "fun",
     tags: ["knowledge", "science", "self learning"],
     image: "image_4.jpg",
-    comments: 5,
+    comments: [{
+        user: person4.name,
+        userImg: person4.img,
+        date: "Oct 2, 2019",
+        body: "One-of-a-kind mainstream braiding manufacture elegant photography motif embroidery shawl purchase necessity glossy trade.",
+        comments: []
+    }, {
+        user: person7.name,
+        userImg: person7.img,
+        date: "Oct 3, 2019",
+        body: "This is awesome!!!!!",
+        comments: [{
+            user: person8.name,
+            userImg: person8.img,
+            date: "Oct 4, 2019",
+            body: "Glitter synthetic celebrities color garment imagination jersey beautiful trade hippie. Measurement adjustment pret-a-porter imprint prediction accessory braiding look modern inexpensive illustration.",
+            comments: []
+        }]
+    }],
     date: "Sept, 29, 2019"
 }, {
     title: "The Death Of Fashion",
@@ -98,7 +251,25 @@ let postData = [{
     category: "fashion",
     tags: ["money", "pop culture"],
     image: "image_5.jpg",
-    comments: 6,
+    comments: [{
+        user: "Jenny Smith",
+        userImg: defaultImage,
+        date: "Oct 12, 2019",
+        body: "Shade stitching tones effect trademark. Glitter vintage minimalist craftmanship old-fashioned revealing. Expirement zipper tailored value wardrobe trademark lingerie accessory jersey. Valuable beautiful apparel vogue posture.",
+        comments: []
+    }, {
+        user: "Walter White",
+        userImg: defaultImage,
+        date: "Oct 16, 2019",
+        body: "Retailer bold bargain model zipper tailor bodice impeccable unique independant instagram availability. Illustration modern textile limited zipper trend inexpensive unique valuable.",
+        comments: []
+    }, {
+        user: person8.name,
+        userImg: person8.img,
+        date: "Oct 17, 2019",
+        body: "Shade outlet pret-a-porter prediction swim-wear tones sportswear hair waistline pastel runway impeccable.",
+        comments: []
+    }],
     date: "Oct, 10, 2019"
 }, {
     title: "What Will Cool Be Like in 100 Years?",
@@ -116,7 +287,13 @@ let postData = [{
     category: "fun",
     tags: ["true stories", "tech", "mindfulness"],
     image: "image_6.jpg",
-    comments: 10,
+    comments: [{
+        user: person3.name,
+        userImg: person3.img,
+        date: "Oct 19, 2019",
+        body: "Look posture wardrobe inspiration tailor unique breathable expensive shawl. Sewing stock handbag jacket. Necessity consumer artistic runway young imprint retailer influence measurement elegant pattern taste tailor. Bodice hanger trade measurement photography modification shape ribbon jeans apparel casual celebrities craftmanship.",
+        comments: []
+    }],
     date: "Oct, 15, 2019"
 }, {
     title: "Fun: 10 Things I Wish I'd Known Earlier",
@@ -141,7 +318,31 @@ let postData = [{
     category: "fun",
     tags: ["happiness", "self-help"],
     image: "image_7.jpg",
-    comments: 13,
+    comments: [{
+        user: person5.name,
+        userImg: person5.img,
+        date: "Oct 24, 2019",
+        body: "Revealing showcase apron inspiration sleeveless shawl shape combination brand sportswear modern.",
+        comments: [{
+            user: author.name,
+            userImg: author.img,
+            date: "Oct 24, 2019",
+            body: "Skirt runway wholesale.",
+            comments: []
+        }]
+    }, {
+        user: person6.name,
+        userImg: person6.img,
+        date: "Oct 25, 2019",
+        body: "Thanks for sharing this!!!!!!!!",
+        comments: []
+    }, {
+        user: person3.name,
+        userImg: person3.img,
+        date: "Oct 25, 2019",
+        body: "What a great insight, truly beautiful.",
+        comments: []
+    }],
     date: "Oct, 23, 2019"
 }, {
     title: "12 Helpful Tips For Doing Life",
@@ -159,7 +360,19 @@ let postData = [{
     category: "life",
     tags: ["friendships", "relationships"],
     image: "image_8.jpg",
-    comments: 2,
+    comments: [{
+        user: person10.name,
+        userImg: person10.img,
+        date: "Oct 29, 2019",
+        body: "Fashion apron model. Leotard shade enhance xl breathable urban popular expensive Haute-couture look wardrobe original jeans.",
+        comments: []
+    }, {
+        user: person9.name,
+        userImg: person9.img,
+        date: "Oct 29, 2019",
+        body: "Posture stylish necessity attractive outfit effect adjustment hand-made buttons swim-wear trademark purchase.",
+        comments: []
+    }],
     date: "Oct, 27, 2019"
 }, {
     title: "17 Reasons Why You Should Ignore People",
@@ -178,7 +391,43 @@ let postData = [{
     category: "life",
     tags: ["happiness", "self-help", "mindfulness"],
     image: "image_9.jpg",
-    comments: 8,
+    comments: [{
+        user: person1.name,
+        userImg: person1.img,
+        date: "Nov 1, 2019",
+        body: "Petticoat shade attractive modification inspiration taste price conservative affection jersey. Bodice instagram purse label tailor!",
+        comments: []
+    }, {
+        user: person2.name,
+        userImg: person2.img,
+        date: "Nov 2, 2019",
+        body: "Posture limited modification inspiration attractive impeccable item. Mode revealing trade necessity price outfit impeccable cheap stock.",
+        comments: [{
+            user: "Jim Fridman",
+            userImg: defaultImage,
+            date: "Nov 2, 2019",
+            body: "I agree, well said.",
+            comments: []
+        }, {
+            user: person7.name,
+            userImg: person7.img,
+            date: "Nov 3, 2019",
+            body: "Enhance leotard innovation radical model jumper hand-made. Photography couture.",
+            comments: []
+        }]
+    }, {
+        user: person5.name,
+        userImg: person5.img,
+        date: "Nov 5, 2019",
+        body: "Stylish jersey shape hippie taste imagination illustration.",
+        comments: []
+    }, {
+        user: person4.name,
+        userImg: person4.img,
+        date: "Nov 7, 2019",
+        body: "Waistline trade proportion jacket edge shade make up trademark instagram xs bows purchase easy. Impeccable beautiful glitter innovation quantity zipper piece pattern hanger hair modern. Value stock industry lingerie.",
+        comments: []
+    }],
     date: "Oct, 30, 2019"
 }, {
     title: "The Ultimate Cheat Sheet for Travel",
@@ -196,7 +445,37 @@ let postData = [{
     category: "travel",
     tags: ["culture", "money"],
     image: "image_10.jpg",
-    comments: 8,
+    comments: [{
+        user: person9.name,
+        userImg: person9.img,
+        date: "Nov 5, 2019",
+        body: "Young vintage Haute-couture embroidery illustration trendwatching stylish. Illustration allure leotard embroidery mannequin petticoat inexpensive make up celebrities.",
+        comments: []
+    }, {
+        user: "John Smith",
+        userImg: defaultImage,
+        date: "Nov 9, 2019",
+        body: "Collection edge vogue instagram. Motif illustration collection.",
+        comments: [{
+            user: author.name,
+            userImg: author.img,
+            date: "Nov 10, 2019",
+            body: "Unique model pattern comfortable brand one-of-a-kind commercial. Inexpensive handbag tailor conservative valuable.",
+            comments: [{
+                user: person6.name,
+                userImg: person6.img,
+                date: "Nov 11, 2019",
+                body: "Attractive innovation apparel hair glitter allure jumper swim-wear Haute-couture. Vogue hand-made model mainstream.",
+                comments: []
+            }]
+        }]
+    }, {
+        user: person8.name,
+        userImg: person8.img,
+        date: "Nov 15, 2019",
+        body: "Young vintage Haute-couture embroidery illustration trendwatching stylish. Illustration allure leotard embroidery mannequin petticoat inexpensive make up celebrities.",
+        comments: []
+    }],
     date: "Nov, 4, 2019"
 }, {
     title: "5 Things Everyone Gets Wrong About Love",
@@ -216,7 +495,37 @@ let postData = [{
     category: "love",
     tags: ["romance", "money", "relationships"],
     image: "image_11.jpg",
-    comments: 12,
+    comments: [{
+        user: person7.name,
+        userImg: person7.img,
+        date: "Nov 10, 2019",
+        body: "Expensive cheap xl swag condition accessory jeans outfit trade measurement. Accessory condition apparel unique price halter braiding wholesale stock apron bows. Imprint trade vintage outlet. Posture original.",
+        comments: []
+    }, {
+        user: "Sam Holtby",
+        userImg: defaultImage,
+        date: "Nov 10, 2019",
+        body: "Shade vintage pastel swim-wear inspiration ensemble. Conservative vogue inexpensive. Etiquette pret-a-porter price artificial artistic hanger wardrobe.",
+        comments: []
+    }, {
+        user: "Kristen Murphy",
+        userImg: defaultImage,
+        date: "Nov 13, 2019",
+        body: "Pumps outlet classic apron production artistic ready-made. Sportswear shawl brand textile trademark pumps. Apron runway stock tailored.",
+        comments: [{
+            user: person9.name,
+            userImg: person9.img,
+            date: "Nov 14, 2019",
+            body: "Shade vintage pastel swim-wear inspiration ensemble. Conservative vogue inexpensive. Etiquette pret-a-porter price artificial artistic hanger wardrobe.",
+            comments: []
+        }, {
+            user: person10.name,
+            userImg: person10.img,
+            date: "Nov 17, 2019",
+            body: "Hair consumer celebrities apron trendwatching pumps jewelry wardrobe label conformity.",
+            comments: []
+        }]
+    }],
     date: "Nov, 9, 2019"
 }, {
     title: "How to Sell Love to a Skeptic",
@@ -233,13 +542,61 @@ let postData = [{
     category: "love",
     tags: ["romance", "happiness", "friendships"],
     image: "image_12.jpg",
-    comments: 18,
+    comments: [{
+        user: person5.name,
+        userImg: person5.img,
+        date: "Nov 18, 2019",
+        body: "Classic revealing attractive. Limited purchase model craftmanship posture label. Availability production outfit industry bodice taste hanger apparel. Phenomenon taste combination.",
+        comments: [{
+            user: person4.name,
+            userImg: person4.img,
+            date: "Nov 18, 2019",
+            body: "Collection catwalk purchase sportswear old-fashioned model limited conservative buttons.",
+            comments: []
+        }]
+    }, {
+        user: person3.name,
+        userImg: person3.img,
+        date: "Nov 19, 2019",
+        body: "Proportion emphasis beautiful etiquette petticoat buttons stock fashion.",
+        comments: []
+    }, {
+        user: person8.name,
+        userImg: person8.img,
+        date: "Nov 20, 2019",
+        body: "Jeans hand-made quality effect Haute-couture waistline enhance sportswear. Valuable trendwatching independant fashion inspiration color skirt pattern.",
+        comments: []
+    }, {
+        user: person9.name,
+        userImg: person9.img,
+        date: "Nov 23, 2019",
+        body: "Piece attractive mode artificial showcase pattern casual embroidery label stylish leotard garment. Minimalist signature item skirt.",
+        comments: [{
+            user: person10.name,
+            userImg: person10.img,
+            date: "Nov 24, 2019",
+            body: "Collection catwalk purchase sportswear old-fashioned model limited conservative buttons.",
+            comments: []
+        }]
+    }],
     date: "Nov, 16, 2019"
 }];
 
 for (let i = 0; i < postData.length; i++) {
     let startingId = 842;
     postData[i].id = startingId + i;
+
+    postData[i].numOfComments = countComments(postData[i].comments)
+}
+
+function countComments(commentsArray) {
+    let amount = 0;
+    amount += commentsArray.length;
+    for (let i = 0; i < commentsArray.length; i++) {
+        amount = amount + countComments(commentsArray[i].comments)
+    }
+    return amount;
+
 }
 module.exports = {
     postData
