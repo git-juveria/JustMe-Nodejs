@@ -582,12 +582,21 @@ let postData = [{
     date: "Nov, 16, 2019"
 }];
 
+let uniqueTags = new Set;
+
 for (let i = 0; i < postData.length; i++) {
     let startingId = 842;
     postData[i].id = startingId + i;
-
     postData[i].numOfComments = countComments(postData[i].comments)
+
+    for (let j = 0; j < postData[i].tags.length; j++) {
+        uniqueTags.add(postData[i].tags[j])
+    }
 }
+
+uniqueTags = [...uniqueTags] //set into array
+
+console.log(uniqueTags)
 
 function countComments(commentsArray) {
     let amount = 0;
@@ -599,5 +608,6 @@ function countComments(commentsArray) {
 
 }
 module.exports = {
-    postData
+    postData,
+    uniqueTags
 }

@@ -1,6 +1,8 @@
 const data = require('../../data')
 
 const postData = data.postData
+const uniqueTags = data.uniqueTags
+const recentPostsAmount = 3;
 
 const getHomePage = function(req, res) {
     const templateData = {
@@ -13,11 +15,11 @@ const getHomePage = function(req, res) {
 const getBlogPost = function({ params }, res) {
     let post = postData.find((val) => val.id == params.postid)
     if (!post) { res.redirect('/404') }
-    res.render('post.ejs', { title: post.title, post: post })
+    res.render('post.ejs', { title: post.title, post: post, uniqueTags: uniqueTags, recentPosts: postData.slice(0, recentPostsAmount) })
 }
 
 const get404 = function(req, res) {
-    res.render('404.ejs', { title: '404- Page Not Found' })
+    res.render('404.ejs', { title: '404- Page Not Found', uniqueTags: uniqueTags, recentPosts: postData.slice(0, recentPostsAmount) })
 }
 
 const redirect404 = function(req, res) {
