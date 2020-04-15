@@ -583,6 +583,7 @@ let postData = [{
 }];
 
 let uniqueTags = new Set;
+let categoryData = []
 
 for (let i = 0; i < postData.length; i++) {
     let startingId = 842;
@@ -592,11 +593,19 @@ for (let i = 0; i < postData.length; i++) {
     for (let j = 0; j < postData[i].tags.length; j++) {
         uniqueTags.add(postData[i].tags[j])
     }
+
+    var holder = holder || [];
+    if (holder.includes(postData[i].category)) {
+        categoryData.forEach((val) => {
+            val.category === postData[i].category && val.amount++;
+        })
+    } else {
+        holder.push(postData[i].category)
+        categoryData.push({ category: postData[i].category, amount: 1 })
+    }
 }
 
 uniqueTags = [...uniqueTags] //set into array
-
-console.log(uniqueTags)
 
 function countComments(commentsArray) {
     let amount = 0;
@@ -609,5 +618,6 @@ function countComments(commentsArray) {
 }
 module.exports = {
     postData,
-    uniqueTags
+    uniqueTags,
+    categoryData
 }
