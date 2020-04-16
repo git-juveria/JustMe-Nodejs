@@ -34,11 +34,18 @@ const getAbout = function(req, res) {
 const getContact = function(req, res) {
     res.render('contact', { title: 'Contact Me', active: "contact", categoryData: categoryData })
 }
+
+const getFilteredList = function({ query }, res) {
+    let filteredPosts = postData.filter((val) => val.category == query.category)
+
+    res.render('filter', { title: "Just Me-filtered", active: query.category, posts: filteredPosts, categoryData: categoryData })
+}
 module.exports = {
     getHomePage,
     getBlogPost,
     getAbout,
     getContact,
+    getFilteredList,
     get404,
     redirect404
 
