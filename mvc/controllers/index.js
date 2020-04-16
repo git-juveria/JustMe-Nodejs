@@ -40,7 +40,7 @@ const getFilteredList = function({ query }, res) {
         return val.category == query.category || val.tags.includes(query.tag)
     })
 
-    res.render('filter', { title: "Just Me-filtered", active: query.category, posts: filteredPosts, categoryData: categoryData })
+    res.render('filter.ejs', { title: "Just Me-filtered", active: query.category, posts: filteredPosts, categoryData: categoryData })
 }
 module.exports = {
     getHomePage,

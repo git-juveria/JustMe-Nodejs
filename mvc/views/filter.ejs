@@ -15,7 +15,7 @@
                                     <div class="meta-wrap">
                                             <p class="meta">
                                 <span><i class="icon-calendar mr-2"></i> <%= posts[i].date%></span>
-                                <span><a href="/posts/<%= posts[i].id%>"><i class="icon-folder-o mr-2"></i>Travel</a></span>
+                                <span><a href="/filter?category=<%= posts[i].category%>" class="text-capitalize"><i class="icon-folder-o mr-2"></i><%= posts[i].category%></a></span>
                                 <span><i class="icon-comment2 mr-2"></i><%= posts[i].numOfComments%> Comment</span>
                             </p>
                         </div>
