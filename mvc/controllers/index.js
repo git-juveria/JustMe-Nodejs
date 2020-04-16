@@ -11,7 +11,7 @@ const getHomePage = function(req, res) {
         title: "Just Me",
         posts: postData
     }
-    res.render('index.ejs', { title: "Just Me", posts: postData, active: "index" })
+    res.render('index.ejs', { title: "Just Me", posts: postData, active: "index", categoryData: categoryData })
 }
 
 const getBlogPost = function({ params }, res) {
