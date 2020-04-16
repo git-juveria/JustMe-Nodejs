@@ -3,6 +3,14 @@
     <section class="ftco-section ftco-no-pt ftco-no-pb">
     <div class="container px-0">
         <div class="row no-gutters">
+
+        <% if(posts.length==0){%>
+            <div class="mt-5 pt-5">
+                <h1 class="font-weight-bold display-4">No artciles found</h1>
+                <h4 class=font-weight-light>Go back to the <a href="/">home page</a>?</h4>
+            </div>
+        <%}%>
+
             <% for(let i=0;i<posts.length;i++){%>
                 <div class="col-md-12 blog-wrap">
                     <div class="row no-gutters align-items-center">
