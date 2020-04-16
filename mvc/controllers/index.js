@@ -36,7 +36,9 @@ const getContact = function(req, res) {
 }
 
 const getFilteredList = function({ query }, res) {
-    let filteredPosts = postData.filter((val) => val.category == query.category)
+    let filteredPosts = postData.filter((val) => {
+        return val.category == query.category || val.tags.includes(query.tag)
+    })
 
     res.render('filter', { title: "Just Me-filtered", active: query.category, posts: filteredPosts, categoryData: categoryData })
 }
