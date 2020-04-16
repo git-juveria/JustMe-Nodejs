@@ -6,22 +6,41 @@ const categoryData = data.categoryData
 
 const recentPostsAmount = 6;
 
+const defaultObj = { categoryData: categoryData }
+const rightSideBarData = {
+    uniqueTags: uniqueTags,
+    recentPosts: postData.slice(0, recentPostsAmount)
+}
 const getHomePage = function(req, res) {
-    const templateData = {
+    const data = {
+        ...defaultObj,
         title: "Just Me",
-        posts: postData
+        posts: postData,
+        active: "index"
     }
-    res.render('index.ejs', { title: "Just Me", posts: postData, active: "index", categoryData: categoryData })
+    res.render('index.ejs', data)
 }
 
 const getBlogPost = function({ params }, res) {
     let post = postData.find((val) => val.id == params.postid)
     if (!post) { res.redirect('/404') }
-    res.render('post.ejs', { title: post.title, post: post, uniqueTags: uniqueTags, recentPosts: postData.slice(0, recentPostsAmount), categoryData: categoryData })
+
+    const data = {
+        ...defaultObj,
+        ...rightSideBarData,
+        title: post.title,
+        post: post
+    }
+    res.render('post.ejs', data)
 }
 
 const get404 = function(req, res) {
-    res.render('404.ejs', { title: '404- Page Not Found', uniqueTags: uniqueTags, recentPosts: postData.slice(0, recentPostsAmount), categoryData: categoryData })
+    const data = {
+        ...defaultObj,
+        ...rightSideBarData,
+        title: '404- Page Not Found',
+    }
+    res.render('404.ejs', data)
 }
 
 const redirect404 = function(req, res) {
@@ -29,18 +48,34 @@ const redirect404 = function(req, res) {
 }
 
 const getAbout = function(req, res) {
-    res.render('about', { title: 'About Me', active: "about", categoryData: categoryData })
+    const data = {
+        ...defaultObj,
+        title: 'About Me',
+        active: "about"
+    }
+    res.render('about', data)
 }
 const getContact = function(req, res) {
-    res.render('contact', { title: 'Contact Me', active: "contact", categoryData: categoryData })
+    const data = {
+        ...defaultObj,
+        title: 'Contact Me',
+        active: "contact"
+    }
+    res.render('contact', data)
 }
 
 const getFilteredList = function({ query }, res) {
     let filteredPosts = postData.filter((val) => {
         return val.category == query.category || val.tags.includes(query.tag)
     })
+    const data = {
+        ...defaultObj,
+        title: "Just Me-filtered",
+        active: query.category,
+        posts: filteredPosts
+    }
 
-    res.render('filter.ejs', { title: "Just Me-filtered", active: query.category, posts: filteredPosts, categoryData: categoryData })
+    res.render('filter.ejs', data)
 }
 module.exports = {
     getHomePage,
